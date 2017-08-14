@@ -9,7 +9,17 @@ var content={
     title: 'Artical one|Srilekha KN',
     heading: 'Artical one',
     date: '13th Aug 2017',
-    content:`
+    content:`<p>
+                   This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical.
+               </p>
+               
+               <p>
+                   This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical.
+               </p>
+               
+               <p>
+                   This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical.
+               </p>`
     
 };
 
