@@ -23,7 +23,12 @@ var articalOne={
     
 };
 
-
+function createTemplate(data){
+    var title=data.title;
+    var header=data.header;
+    var date=data.date;
+    var content=data.content;
+    
 var htmlTemplete=`
 <html>
 <head>
@@ -53,6 +58,7 @@ var htmlTemplete=`
    </div>
 </body>
 </html> `;
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
