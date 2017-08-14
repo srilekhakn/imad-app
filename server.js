@@ -28,7 +28,7 @@ articalTwo:{
     heading: 'Artical Two',
     date: '14th Aug 2017',
     content:`<p>
-                   This is the content for my first artical.  
+                   This is the content for my secound artical.  
                </p>`
         },
 articalThree:{
@@ -36,7 +36,7 @@ articalThree:{
     heading: 'Artical Three',
     date: '15th Aug 2017',
     content:`<p>
-                   This is the content for my first artical.  
+                   This is the content for my third artical.  
                </p>`
     
     }
