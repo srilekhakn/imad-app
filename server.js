@@ -91,11 +91,11 @@ app.get('/artical-one', function (req, res) {
 });
 
 app.get('/artical-two', function (req, res) {
-  res.sendFile('Artical two requested and will be served here');
+   res.send(createTemplate(articalTwo));
 });
 
 app.get('/artical-three', function (req, res) {
-  res.sendFile('Artical three requested and will be served here');
+  res.send(createTemplate(articalThree));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','madi.png'));
