@@ -29,7 +29,7 @@ function createTemplate(data){
     var date=data.date;
     var content=data.content;
     
-var htmlTemplete=`
+var htmlTemplate=`
 <html>
 <head>
     <title>Artical-one|Srilekha KN</title>
@@ -58,6 +58,7 @@ var htmlTemplete=`
    </div>
 </body>
 </html> `;
+return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
