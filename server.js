@@ -51,14 +51,14 @@ function createTemplate(data){
 var htmlTemplate=`
 <html>
 <head>
-    <title>Artical-one|Srilekha KN</title>
+    <title>$(title)</title>
     <meta name="viewport" content="width=device-width, initalscale=1" />
     <link href="/ui/style.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="container">
             <div> 
-                $(title)
+                <a href="/">HOME</a>
             </div>
             
            <hr/>
