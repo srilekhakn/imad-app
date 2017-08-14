@@ -5,9 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articalOne={
+var articals={
+articalOne: {
     title: 'Artical one|Srilekha KN',
-    link: '<a href="/">Home</a>',
     heading: 'Artical one',
     date: '13th Aug 2017',
     content:`<p>
@@ -22,11 +22,28 @@ var articalOne={
                    This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical.
                </p>`
     
+        },
+articalTwo:{
+     title: 'Artical Two|Srilekha KN',
+    heading: 'Artical Two',
+    date: '14th Aug 2017',
+    content:`<p>
+                   This is the content for my first artical.  
+               </p>`
+        },
+articalThree:{
+    title: 'Artical Three|Srilekha KN',
+    heading: 'Artical Three',
+    date: '15th Aug 2017',
+    content:`<p>
+                   This is the content for my first artical.  
+               </p>`
+    
+    }
 };
 
 function createTemplate(data){
     var title=data.title;
-    var link=data.link;
     var header=data.header;
     var date=data.date;
     var content=data.content;
@@ -34,14 +51,14 @@ function createTemplate(data){
 var htmlTemplate=`
 <html>
 <head>
-    <title> $(title)</title>
+    <title>Artical-one|Srilekha KN</title>
     <meta name="viewport" content="width=device-width, initalscale=1" />
     <link href="/ui/style.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="container">
             <div> 
-               $(link)
+                $(title)
             </div>
             
            <hr/>
@@ -68,7 +85,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/artical-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.send(createTemplate(articalOne));
 });
 
 app.get('/artical-two', function (req, res) {
