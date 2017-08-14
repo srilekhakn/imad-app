@@ -7,6 +7,7 @@ app.use(morgan('combined'));
 
 var articalOne={
     title: 'Artical one|Srilekha KN',
+    link: '<a href="/">Home</a>',
     heading: 'Artical one',
     date: '13th Aug 2017',
     content:`<p>
@@ -25,6 +26,7 @@ var articalOne={
 
 function createTemplate(data){
     var title=data.title;
+    var link=data.link;
     var header=data.header;
     var date=data.date;
     var content=data.content;
@@ -32,14 +34,14 @@ function createTemplate(data){
 var htmlTemplate=`
 <html>
 <head>
-    <title>Artical-one|Srilekha KN</title>
+    <title> $(title)</title>
     <meta name="viewport" content="width=device-width, initalscale=1" />
     <link href="/ui/style.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="container">
             <div> 
-                $(title)
+               $(link)
             </div>
             
            <hr/>
@@ -66,7 +68,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/artical-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'artical-one.html'));
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/artical-two', function (req, res) {
