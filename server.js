@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articals={
-articalOne: {
+articalOne : {
     title: 'Artical one|Srilekha KN',
     heading: 'Artical one',
     date: '13th Aug 2017',
@@ -86,17 +86,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/artical-one', function (req, res) {
-  res.send(createTemplate(articalOne));
+app.get('/:articalName', function (req, res) {
+    var articalName= req.params.articalName;
+  res.send(createTemplate(articals[articalName]));
 });
 
-app.get('/artical-two', function (req, res) {
-   res.send(createTemplate(articalTwo));
-});
 
-app.get('/artical-three', function (req, res) {
-  res.send(createTemplate(articalThree));
-});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','madi.png'));
 });
