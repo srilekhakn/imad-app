@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 var articals={
 articalOne : {
     title: 'Artical one|Srilekha KN',
-    heading: 'Artical one',
+    header: 'Artical one',
     date: '13th Aug 2017',
     content:`<p>
                    This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical. This is the content for my first artical.
@@ -25,7 +25,7 @@ articalOne : {
         },
 articalTwo:{
      title: 'Artical Two|Srilekha KN',
-    heading: 'Artical Two',
+    header: 'Artical Two',
     date: '14th Aug 2017',
     content:`<p>
                    This is the content for my secound artical.  
@@ -33,7 +33,7 @@ articalTwo:{
         },
 articalThree:{
     title: 'Artical Three|Srilekha KN',
-    heading: 'Artical Three',
+    header: 'Artical Three',
     date: '15th Aug 2017',
     content:`<p>
                    This is the content for my third artical.  
@@ -51,7 +51,7 @@ function createTemplate(data){
 var htmlTemplate=`
 <html>
 <head>
-    <title>$(title)</title>
+    <title>${title}</title>
     <meta name="viewport" content="width=device-width, initalscale=1" />
     <link href="/ui/style.css" rel="stylesheet"/>
 </head>
@@ -64,15 +64,15 @@ var htmlTemplate=`
            <hr/>
            
            <h3>
-               $(heading)
+               ${header}
            </h3>
            
            <div>
-               $(date)
+               ${date}
            </div>
            
            <div>
-               $(content)
+               ${content}
            </div>
    </div>
 </body>
