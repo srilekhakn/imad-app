@@ -84,6 +84,10 @@ app.get('/counter',function(req,res){
  	counter=counter+1;
 	res.send(counter.toString());
 });
+app.get('/test-db',function(req,res){
+    
+    
+});
 app.get('/:articalName', function (req, res) {
   var articalName=req.params.articalName;
   res.send(createTemplate(articals[articalName]));
