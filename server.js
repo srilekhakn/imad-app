@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 
 var config = {
     user: 'srilekhakn27',
@@ -40,6 +40,18 @@ var articals= {
 
 };
 
+var pool=new Pool(config);
+app.get('/test-db',function(req,res){
+    pool.query('select *from test', function(err,result) {
+        if(err){
+        res.status(500).send(err.toString());
+        }
+        else{
+            res.send(JSON.stringify(result));
+        }
+    });
+    
+});
 
 function createTemplate(data){
     var title = data.title;
@@ -95,18 +107,7 @@ app.get('/counter',function(req,res){
 	res.send(counter.toString());
 });
 
-var pool=new Pool(config);
-app.get('/test-db',function(req,res){
-    pool.query('select *from test', function(err,result) {
-        if(err){
-        res.status(500).send(err.toString());
-        }
-        else{
-            res.send(JSON.stringify(result));
-        }
-    });
-    
-});
+
 app.get('/:articalName', function (req, res) {
   var articalName=req.params.articalName;
   res.send(createTemplate(articals[articalName]));
