@@ -1,24 +1,4 @@
-var button=document.getElementById('counter');
-var counter=0;
-button.onclick = function(){
-	var request= new XMLHttpRequest();
-	//create the request
-	request.onreadystatechange = function(){
-	if(request.readyState===XMLHttpRequest.DONE){
-	if(request.status===200){
-		var counter = request.responseText;
-		var span=document.getElementById('count');
-		span.innerHTML = counter.toString();
-	}
-}
-
-	};
-	//make the request
-	request.open('GET','http://srilekhakn27.imad.hasura-app.io/counter',true);
-	request.send(null);
-	
-};
-
+// submit username and pass
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
 	
@@ -44,10 +24,10 @@ submit.onclick = function(){
 
 	};
 	//make the request
-	var nameInput=document.getElementById('name');
-	var name=nameInput.value;
-	request.open('GET','http://srilekhakn27.imad.hasura-app.io/submit-name?name='+name,true);
-	request.send(null);
+	var username=document.getElementById('username').value;
+	var password=document.getElementById('password').value;
+	request.open('POST','http://srilekhakn27.imad.hasura-app.io/submit-name?name='+name,true);
+	request.send(JSON.strinfigy({username: username, password: password}));
 
 
 	
