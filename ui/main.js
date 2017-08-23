@@ -15,7 +15,7 @@ submit.onclick = function(){
 	var list='';
 	for(var i=0;i<names.length;i++)
 	{
-	list +='<li>' + names[i] +'</li>'
+	list +='<li>' + names[i] +'</li>';
 	}
 	var ul=document.getElementById('namelist');
 	ul.innerHTML=list;
@@ -26,6 +26,8 @@ submit.onclick = function(){
 	//make the request
 	var username=document.getElementById('username').value;
 	var password=document.getElementById('password').value;
+	console.log(username);
+	console.log(password);
 	request.open('POST','http://srilekhakn27.imad.hasura-app.io/submit-name?name='+name,true);
 	request.send(JSON.strinfigy({username: username, password: password}));
 
